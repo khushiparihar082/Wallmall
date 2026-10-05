@@ -1,0 +1,110 @@
+DELIMITER //
+
+CREATE FUNCTION getThumbnailImagePath(originalImagePath VARCHAR(255))
+RETURNS VARCHAR(255)
+DETERMINISTIC
+BEGIN
+    DECLARE pathWithoutFileName VARCHAR(255);
+    DECLARE fileName VARCHAR(255);
+    DECLARE directoryPath VARCHAR(255);
+    DECLARE thumbnailPath VARCHAR(255);
+
+    -- Extract the directory path without the file name
+    SET directoryPath = SUBSTRING_INDEX(originalImagePath, '/', -1);
+
+    -- Extract the file name
+    SET fileName = SUBSTRING_INDEX(originalImagePath, '/', -1);
+
+    -- Extract the path before the file name
+    SET pathWithoutFileName = LEFT(originalImagePath, CHAR_LENGTH(originalImagePath) - CHAR_LENGTH(fileName));
+
+    -- Combine the path with the 'thumbnail' directory and the file name
+    SET thumbnailPath = CONCAT(pathWithoutFileName, 'thumbnail/', fileName);
+
+    RETURN thumbnailPath;
+END //
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE create_index_if_not_exists(
+    IN p_table_name VARCHAR(255),
+    IN p_index_name VARCHAR(255),
+    IN p_column_list VARCHAR(255)
+)
+BEGIN
+    DECLARE idx_count INT;
+
+    -- Check if the index already exists
+    SELECT COUNT(1) INTO idx_count
+    FROM INFORMATION_SCHEMA.STATISTICS
+    WHERE TABLE_SCHEMA = DATABASE()
+      AND TABLE_NAME = p_table_name
+      AND INDEX_NAME = p_index_name;
+
+    -- If the index does not exist, create it
+    IF idx_count = 0 THEN
+        SET @create_index_stmt = CONCAT('CREATE INDEX ', p_index_name, ' ON ', p_table_name, ' (', p_column_list, ')');
+        PREPARE stmt FROM @create_index_stmt;
+        EXECUTE stmt;
+        DEALLOCATE PREPARE stmt;
+    END IF;
+END$$
+
+DELIMITER ;
+
+-- Indexes on `product` Table
+CALL create_index_if_not_exists('product', 'idx_product_category_type_id', 'category_type_id');
+CALL create_index_if_not_exists('product', 'idx_product_category_id', 'category_id');
+CALL create_index_if_not_exists('product', 'idx_product_brand_id', 'brand_id');
+CALL create_index_if_not_exists('product', 'idx_product_variant_id', 'variant_id');
+
+-- Indexes on `product_variant` Table
+CALL create_index_if_not_exists('product_variant', 'idx_product_variant_product_id', 'product_id');
+CALL create_index_if_not_exists('product_variant', 'idx_product_variant_unit_id', 'unit_id');
+CALL create_index_if_not_exists('product_variant', 'idx_product_variant_color_id', 'color_id');
+CALL create_index_if_not_exists('product_variant', 'idx_product_variant_size_id', 'size_id');
+
+-- Indexes on `category_type` Table
+CALL create_index_if_not_exists('category_type', 'idx_category_type_name', 'category_type_name');
+
+-- Indexes on `category` Table
+CALL create_index_if_not_exists('category', 'idx_category_category_id', 'category_id');
+
+-- Indexes on `brand` Table
+CALL create_index_if_not_exists('brand', 'idx_brand_brand_id', 'brand_id');
+
+-- Indexes on `customer_wishlist` Table
+CALL create_index_if_not_exists('customer_wishlist', 'idx_customer_wishlist_customer_id_product_id', 'customer_id, product_id');
+
+-- Indexes on `customer_cart` Table
+CALL create_index_if_not_exists('customer_cart', 'idx_customer_cart_customer_id_product_id_variant_id_size_id', 'customer_id, product_id, variant_id, size_id');
+
+-- Indexes on `offer_item` Table
+CALL create_index_if_not_exists('offer_item', 'idx_offer_item_product_id', 'product_id');
+CALL create_index_if_not_exists('offer_item', 'idx_offer_item_offer_id', 'offer_id');
+
+-- Indexes on `offer` Table
+CALL create_index_if_not_exists('offer', 'idx_offer_offer_id', 'offer_id');
+CALL create_index_if_not_exists('offer', 'idx_offer_offer_from_to', 'offer_from, offer_to');
+
+-- Indexes on `customer_review` Table
+CALL create_index_if_not_exists('customer_review', 'idx_customer_review_variant_id', 'variant_id');
+CALL create_index_if_not_exists('customer_review', 'idx_customer_review_customer_rating', 'customer_rating');
+
+-- Indexes on `size_vs_variant` Table
+CALL create_index_if_not_exists('size_vs_variant', 'idx_size_vs_variant_variant_id', 'variant_id');
+CALL create_index_if_not_exists('size_vs_variant', 'idx_size_vs_variant_size_id', 'size_id');
+
+-- Indexes on `stock` Table
+CALL create_index_if_not_exists('stock', 'idx_stock_variant_id_size_id', 'variant_id, size_id');
+
+-- Indexes on `unit` Table
+CALL create_index_if_not_exists('unit', 'idx_unit_unit_id', 'unit_id');
+
+-- Indexes on `color` Table
+CALL create_index_if_not_exists('color', 'idx_color_color_id', 'color_id');
+
+-- Indexes on `top_search` Table
+CALL create_index_if_not_exists('top_search', 'idx_top_search_product_id', 'product_id');

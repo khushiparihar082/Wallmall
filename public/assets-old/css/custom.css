@@ -1,0 +1,8 @@
+.offcanvas.vendor-offcanvas {
+    width: 600px !important;
+  }
+  .color-code-show {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }

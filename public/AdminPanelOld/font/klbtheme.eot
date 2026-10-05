@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-site-verification" content="wYcrLzsNQqeYC4rVUuDyaV6OLWw-QNAygEd_dzC1-qM" />
+
+	<meta name='robots' content='noindex, follow' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.4 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Page not found - KlbTheme - Premium WordPress Themes</title>
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Page not found - KlbTheme - Premium WordPress Themes" />
+	<meta property="og:site_name" content="KlbTheme - Premium WordPress Themes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://klbtheme.com/#website","url":"https://klbtheme.com/","name":"KlbTheme - Premium WordPress Themes","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://klbtheme.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//754969b0.rocketcdn.me' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link href='https://754969b0.rocketcdn.me' rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="KlbTheme - Premium WordPress Themes &raquo; Feed" href="https://klbtheme.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="KlbTheme - Premium WordPress Themes &raquo; Comments Feed" href="https://klbtheme.com/comments/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='sbi_styles-css' href='https://klbtheme.com/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css' href='https://klbtheme.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tp_twitter_plugin_css-css' href='https://klbtheme.com/wp-content/plugins/recent-tweets-widget/tp_twitter_plugin.css?ver=1.0' type='text/css' media='screen' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='dgwt-wcas-style-css' href='https://klbtheme.com/wp-content/plugins/ajax-search-for-woocommerce/assets/css/style.min.css?ver=1.26.1' type='text/css' media='all' />
+<link rel='preload' as='font' type='font/woff2' crossorigin='anonymous' id='tinvwl-webfont-font-css' href='https://klbtheme.com/wp-content/plugins/ti-woocommerce-wishlist/assets/fonts/tinvwl-webfont.woff2?ver=xu2uyi'  media='all' />
+<link rel='stylesheet' id='tinvwl-webfont-css' href='https://klbtheme.com/wp-content/plugins/ti-woocommerce-wishlist/assets/css/webfont.min.css?ver=2.7.4' type='text/css' media='all' />
+<link rel='stylesheet' id='tinvwl-css' href='https://klbtheme.com/wp-content/plugins/ti-woocommerce-wishlist/assets/css/public.min.css?ver=2.7.4' type='text/css' media='all' />
+<link rel='stylesheet' id='cosmetsy-base-css' href='https://klbtheme.com/wp-content/themes/cosmetsy/assets/css/base.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='cosmetsy-font-dmsans-css' href='//fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='cosmetsy-font-crimson-css' href='//fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='cosmetsy-style-css' href='https://klbtheme.com/wp-content/themes/cosmetsy/style.css?ver=6.3.2' type='text/css' media='all' />
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.</p>
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/includes/pjax/js/helpers.js?ver=1.0' id='pjax-helpers-js'></script>
+<link rel="https://api.w.org/" href="https://klbtheme.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://klbtheme.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.2" />
+<meta name="generator" content="WooCommerce 8.2.1" />
+
+<style type="text/css">
+
+
+
+
+
+
+.klb-blog-breadcrumb .container{
+	background-color: #f9f3f2;
+}
+
+
+
+
+
+
+
+ .site-header .site-topbar {
+	background-color:;
+}
+.site-header .site-topbar .site-menu .menu .menu-item a {
+	color:;	
+}
+
+
+.site-header .site-topbar .site-menu .menu .menu-item a:hover  {
+	color:;	
+}
+
+.site-global-notification.klbtype-1 {
+	background-color:;
+}
+
+.site-global-notification.klbtype-1{
+	color:;	
+}
+
+.site-global-notification.klbtype-1:hover {
+	color:;	
+}
+
+.style-5.header-default .site-header--content , .style-5 .site-header--mobile {
+	background-color: ;
+}
+
+.style-5.site-header.header-default .primary-menu.horizontal-menu .menu > .menu-item a {
+	color: ;
+}
+
+.style-5.site-header.header-default .primary-menu.horizontal-menu .menu > .menu-item a:hover {
+	color: ;
+}
+
+.style-5.site-header.header-default .quick-button.canvas-toggle span{
+	background-color: ;
+}
+
+.style-5.header-default .site-header--content a i,
+ .style-5.site-header.header-default .quick-button.search-button i ,
+ .style-5.header-default .site-header--mobile a i{
+	color: ;
+}
+
+.style-2.site-header .primary-menu.horizontal-menu .menu > .menu-item a{
+	color: ;
+}
+
+.style-2.site-header .primary-menu.horizontal-menu .menu > .menu-item a:hover{
+	color: ;
+}
+
+.style-2.site-header .quick-button.canvas-toggle span{
+	background-color: ;
+}
+
+.style-2 .site-header--content a i,
+ .style-2.site-header .quick-button.search-button ,
+ .style-2 .site-header--mobile a i{
+	color: ;
+}
+
+.style-2 .site-header--desktop.hide-mobile , .style-2.site-header .site-header--nav , .style-2 .site-header--mobile{
+	background-color: ;
+
+}
+
+.site-header.style-2 .primary-menu{
+	border-color:;
+}
+
+.style-1 .site-header--content , .style-1 .site-header--content .header-search--form .search-form-input ,
+.style-1 .site-header--nav , .style-1 .site-header--mobile {
+	background-color: ;
+}
+
+.style-1.site-header .primary-menu.horizontal-menu .menu > .menu-item a {
+	color: ;
+}
+
+.style-1.site-header .primary-menu.horizontal-menu .menu > .menu-item a:hover {
+	color: ;
+}
+
+.style-1.site-header .quick-button.canvas-toggle span{
+	background-color: ;
+
+}
+
+.style-1 .site-header--content a i,
+ .style-1 .site-header--mobile a i ,
+ .style-1 .site-header--mobile .quick-button.search-button i{
+	color: ;
+}
+
+.style-1.site-header .quick-button.header-button a{
+	color: ;
+}
+
+.style-1.site-header .quick-button.header-button a:hover{
+	color: ;
+}
+
+.site-header.header-transparent.style-4 .primary-menu.horizontal-menu .menu > .menu-item > a , .site-header.style-4 .quick-button.text .quick-label ,
+.site-header.header-transparent.style-4 .quick-button , .site-header.style-4 .quick-button.text .quick-label + .cart-count  {
+	color: ;
+	
+}
+
+.site-header.header-transparent.style-4 .primary-menu.horizontal-menu .menu > .menu-item > a:hover , .site-header.style-4 .quick-button.text .quick-label:hover ,
+.site-header.header-transparent.style-4 .quick-button:hover , .site-header.style-4 .quick-button.text .quick-label + .cart-count:hover	{
+	color: ;
+	
+}
+
+.site-header.style-4 .primary-menu.horizontal-menu .menu .sub-menu .menu-item a{
+	color: ;
+}
+
+.site-header.style-4 .primary-menu.horizontal-menu .menu .sub-menu .menu-item a:hover{
+	color: ;
+}
+
+.site-header.header-transparent.style-4 .quick-button.canvas-toggle span{
+	background-color: ;
+}
+
+.site-header.header-transparent.style-4 .site-header--mobile .quick-button > a i,
+ .site-header.header-transparent.style-4 .site-header--mobile .quick-button i{
+	color: ;
+}
+
+
+.site-offcanvas .site-scroll{
+	background-color: ;
+}
+
+.site-scroll .site-offcanvas--main .mobile-menu .menu .menu-item a{
+	color: ;
+}
+
+.site-scroll .site-offcanvas--main .mobile-menu .menu .menu-item a:hover{
+	color: ;
+}
+
+.site-scroll .site-offcanvas--main .mobile-menu .menu > .menu-item + .menu-item , .site-scroll .site-offcanvas--header .offcanvas-close{
+	border-color: ;
+}
+
+.site-scroll  .site-offcanvas--footer .site-social ul.icon.dark li a{
+	color: ;
+}
+
+.site-scroll  .site-offcanvas--footer .site-copyright p{
+	color: ;
+}
+
+.site-scroll  .site-offcanvas--footer .site-copyright p:hover{
+	color: ;
+}
+
+.site-footer .footer-newsletter.klbtype-1 .site-footer--wrapper .entry-subtitle.klbtype-1{
+	color:;
+}
+
+.site-footer .footer-newsletter.klbtype-1 .site-footer--wrapper .entry-subtitle.klbtype-1:hover{
+	color:;
+}
+
+.site-footer .footer-newsletter.klbtype-1 .site-footer--wrapper .entry-title.klbtype-1{
+	color:;
+}
+
+.site-footer .footer-newsletter.klbtype-1 .site-footer--wrapper .entry-title.klbtype-1:hover{
+	color:;
+}
+
+.site-footer .footer-widgets .site-footer--wrapper .widget .widget-title{
+	color:;
+}
+
+.site-footer .footer-widgets .site-footer--wrapper .widget .widget-title:hover{
+	color:;
+}
+
+.site-footer .footer-widgets .site-footer--wrapper a , 
+.site-footer .footer-widgets .site-footer--wrapper .widget.widget_text .textwidget p{
+	color:;
+
+}
+
+.site-footer .footer-widgets .site-footer--wrapper a:hover ,
+.site-footer .footer-widgets .site-footer--wrapper .widget.widget_text .textwidget p:hover {
+	color:;
+
+}
+
+.site-footer .subfooter .site-footer--wrapper .site-social ul li a .social-text{
+	color:;
+
+}
+
+.site-footer--wrapper .site-copyright p{
+	color:;
+}
+
+.site-footer--wrapper .site-copyright p:hover{
+	color:;
+}
+
+.footer-fix-nav{
+	background-color: !important;
+}
+
+.footer-fix-nav a i , .footer-fix-nav svg{
+	color: !important;
+}
+
+.footer-fix-nav a i:hover , .footer-fix-nav svg:hover{
+	color: !important;
+}
+
+.footer-fix-nav .col{
+	border-right-color: !important;
+}
+
+.site-footer .footer-newsletter , .site-footer .footer-instagram.klbtype-1::before{
+	background-color: !important;
+}
+
+.site-footer .footer-instagram .site-instagram span{
+	color: 
+}
+
+.site-footer .footer-instagram .site-instagram span:hover{
+	color: 
+}
+
+.site-footer .footer-instagram .site-instagram .entry-title{
+	color: !important;
+}
+
+.site-footer .footer-instagram .site-instagram .entry-title:hover{
+	color: !important;
+}
+
+.site-footer .footer-widgets, .site-footer .subfooter{
+	background-color:}
+
+</style>
+		<style>
+			.dgwt-wcas-ico-magnifier,.dgwt-wcas-ico-magnifier-handler{max-width:20px}.dgwt-wcas-search-wrapp{max-width:600px}		</style>
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<meta name="generator" content="Elementor 3.16.6; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<link rel="icon" href="https://klbtheme.com/wp-content/uploads/2022/07/cropped-oval-logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://klbtheme.com/wp-content/uploads/2022/07/cropped-oval-logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://klbtheme.com/wp-content/uploads/2022/07/cropped-oval-logo-180x180.png" />
+<meta name="msapplication-TileImage" content="https://klbtheme.com/wp-content/uploads/2022/07/cropped-oval-logo-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.product-media {
+    border-bottom: 1px solid #E8E8E8;
+}
+
+
+.product-content {
+    border: 1px solid #E8E8E8;
+}
+
+ul.products li .content-align {
+    padding: 15px;
+}
+
+ul.products .product .product-content .product-media figure.entry-media {
+    margin-bottom: 0;
+}
+
+.site-footer .footer-widgets, .site-footer .subfooter {
+    background-color: #fffbf8;
+}
+
+span.social-text {
+    display: none;
+}
+
+aside.site-global-notification.klbtype-1 {
+    background-color: #fffbf8;
+}
+
+span.meta-item.entry-author {
+    display: none;
+}
+
+article.blog-post.post {
+    margin-bottom: 10px;
+}
+
+span.tags {
+    display: none;
+}
+
+ul.products .product .product-content .entry-name {
+    min-height: 34px;
+}
+
+		</style>
+		<style id="kirki-inline-styles">.site-header--content .site-brand img{max-width:56px;}.site-header--mobile .site-brand img{width:50px;}.site-offcanvas--header .site-brand a img{width:56px;}.site-scroll .site-offcanvas--main .mobile-menu .menu .menu-item a{font-size:14px;}.site-scroll .site-offcanvas--footer .site-copyright p{font-size:12px;}.style-5.site-header.header-default .primary-menu.horizontal-menu .menu > .menu-item a{font-size:14px;}.site-header .primary-menu.horizontal-menu .menu > .menu-item a , .site-header .primary-menu.horizontal-menu .menu .sub-menu .menu-item a{font-size:14px;}.style-1 .site-header--nav .primary-menu.horizontal-menu .menu > .menu-item > a , .style-1.site-header .primary-menu.horizontal-menu .menu > .menu-item a{font-size:14px;}.site-header.header-transparent.style-4 .primary-menu.horizontal-menu .menu > .menu-item > a , .site-header.style-4 .primary-menu.horizontal-menu .menu .sub-menu .menu-item a , .site-header.style-4 .quick-button.text .quick-label{font-size:14px;}.site-global-notification.klbtype-1 p , .site-header .site-topbar{font-size:13px;}.site-footer .footer-newsletter.klbtype-1 .site-footer--wrapper .entry-subtitle.klbtype-1{font-size:11px;}.site-footer .footer-newsletter.klbtype-1 .site-footer--wrapper .entry-title.klbtype-1{font-size:28px;}.site-footer .footer-widgets .site-footer--wrapper .widget .widget-title{font-size:12px;}.site-footer .footer-widgets .site-footer--wrapper a , .site-footer .footer-widgets .site-footer--wrapper .widget.widget_text .textwidget p{font-size:14px;}.site-footer--wrapper .site-copyright p{font-size:14px;}</style>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F0TMT6Z3L"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-5F0TMT6Z3L');
+	</script>
+
+</head>
+
+<body class="error404 theme-cosmetsy woocommerce-no-js tinvwl-theme-style  elementor-default elementor-kit-359">
+
+	<div class="site-offcanvas">
+	<div class="site-scroll">
+		<div class="site-offcanvas--header">
+			<div class="site-brand">
+									<a href="https://klbtheme.com/" title="KlbTheme &#8211; Premium WordPress Themes">
+						<img src="https://klbtheme.com/wp-content/uploads/2022/07/oval-logo.png" alt="KlbTheme &#8211; Premium WordPress Themes">
+					</a>
+							</div>
+			<div class="offcanvas-close"><i class="klb-x"></i></div>
+		</div>
+		<div class="site-offcanvas--main">
+			<nav class="site-menu mobile-menu vertical-menu">
+				<ul id="menu-menu-1" class="menu"><li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="http://klbtheme.com/"  >Home</a></li>
+<li class="dropdown  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="https://klbtheme.com/themes/"  >Themes</a>
+<ul class="sub-menu">
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/architecture/"  >Architecture</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/corporate/"  >Corporate</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/creative/"  >Creative</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/ecommerce/"  >eCommerce</a></li>
+	<li class="dropdown  menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children"><a href="https://klbtheme.com/themes/nonprofit/"  >Nonprofit</a>
+	<ul class="sub-menu">
+		<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/charity/"  >Charity</a></li>
+		<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/church/"  >Church</a></li>
+	</ul>
+</li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/onepage/"  >Onepage</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/personal/"  >Personal</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/photography/"  >Photography</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/portfolio/"  >Portfolio</a></li>
+</ul>
+</li>
+<li class=" menu-item menu-item-type-post_type menu-item-object-page current_page_parent"><a href="https://klbtheme.com/blog/"  >Blog</a></li>
+<li class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.ticksy.com/"  >Support</a></li>
+<li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/contact-us/"  >Contact Us</a></li>
+<li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/hosting/"  >Hosting</a></li>
+</ul>			</nav>
+			<div class="site-switcher">
+							</div>
+		</div>
+		<div class="site-offcanvas--footer">
+										<div class="site-social">
+					<ul class="icon dark">
+												<li>
+						<a href="https://www.behance.net/TheKlb" target="_blank" class="klb-behance">
+							<span class="social-icon"><i class="klb-klb-behance"></i></span>
+							<span class="social-text">klb-behance</span>
+							<span class="social-label">Follow</span>
+						</a>
+						</li>
+												<li>
+						<a href="https://www.facebook.com/klbtheme" target="_blank" class="klb-facebook">
+							<span class="social-icon"><i class="klb-klb-facebook"></i></span>
+							<span class="social-text">klb-facebook</span>
+							<span class="social-label">Follow</span>
+						</a>
+						</li>
+												<li>
+						<a href="https://dribbble.com/KlbTheme" target="_blank" class="klb-dribbble">
+							<span class="social-icon"><i class="klb-klb-dribbble"></i></span>
+							<span class="social-text">klb-dribbble</span>
+							<span class="social-label">Follow</span>
+						</a>
+						</li>
+												<li>
+						<a href="https://tr.pinterest.com/klbtheme/" target="_blank" class="klb-pinterest">
+							<span class="social-icon"><i class="klb-klb-pinterest"></i></span>
+							<span class="social-text">klb-pinterest</span>
+							<span class="social-label">Follow</span>
+						</a>
+						</li>
+											</ul>
+				</div>
+						<div class="site-copyright">
+									<p>Copyright 2022.KlbTheme . All rights reserved</p>
+							</div>
+		</div>
+	</div>
+</div>  
+	
+				<div id="page" class="site">
+	<div class="site--inner">
+
+		<header id="masthead" class="site-header header-default style-5" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="site-header--desktop hide-mobile">
+
+				<div class="site-topbar">
+					<div class="container">
+						<div class="row align-items-center">
+						
+							<div class="col col-lg-6 col-left">
+								<nav class="site-menu horizontal-menu">
+																	</nav>
+							</div>
+							
+							<div class="col col-lg-6 col-right">
+								<nav class="topbar-button language-switcher site-menu horizontal-menu">
+																	</nav>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="site-header--content">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col col-3 col-left">
+
+																									<div class="quick-button canvas-toggle">
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								
+								<div class="site-brand">
+																														<a href="https://klbtheme.com/" title="KlbTheme &#8211; Premium WordPress Themes">
+												<img src="https://klbtheme.com/wp-content/uploads/2022/07/oval-logo.png"  alt="KlbTheme &#8211; Premium WordPress Themes">
+											</a>
+																											</div>
+
+							</div>
+
+							<div class="col col-9 col-right">
+								<nav class="site-menu primary-menu horizontal-menu">
+									<ul id="menu-menu-2" class="menu"><li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="http://klbtheme.com/"  >Home</a></li>
+<li class="dropdown  menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="https://klbtheme.com/themes/"  >Themes</a>
+<ul class="sub-menu">
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/architecture/"  >Architecture</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/corporate/"  >Corporate</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/creative/"  >Creative</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/ecommerce/"  >eCommerce</a></li>
+	<li class="dropdown  menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children"><a href="https://klbtheme.com/themes/nonprofit/"  >Nonprofit</a>
+	<ul class="sub-menu">
+		<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/charity/"  >Charity</a></li>
+		<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/church/"  >Church</a></li>
+	</ul>
+</li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/onepage/"  >Onepage</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/personal/"  >Personal</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/photography/"  >Photography</a></li>
+	<li class=" menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/themes/portfolio/"  >Portfolio</a></li>
+</ul>
+</li>
+<li class=" menu-item menu-item-type-post_type menu-item-object-page current_page_parent"><a href="https://klbtheme.com/blog/"  >Blog</a></li>
+<li class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.ticksy.com/"  >Support</a></li>
+<li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/contact-us/"  >Contact Us</a></li>
+<li class=" menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/hosting/"  >Hosting</a></li>
+</ul>								</nav>
+								
+								
+									<div class="quick-button search-button">
+		<i class="klb-search"></i>
+	</div>
+
+															</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="site-header--mobile hide-desktop">
+				<div class="container">
+					<div class="row align-items-center">
+					
+						<div class="col col-3 col-left">
+							<div class="quick-button canvas-toggle">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							
+													</div>
+						
+						<div class="col col-6 col-middle">
+							<div class="site-brand">
+																											<a href="https://klbtheme.com/" title="KlbTheme &#8211; Premium WordPress Themes">
+											<img src="https://klbtheme.com/wp-content/uploads/2022/07/oval-logo.png"  alt="KlbTheme &#8211; Premium WordPress Themes">
+										</a>
+																								</div>
+						</div>
+						
+						<div class="col col-3 col-right">
+								<div class="quick-button search-button">
+		<i class="klb-search"></i>
+	</div>
+
+													</div>
+						
+					</div>
+				</div>
+			</div>
+		</header>	
+	
+	<main id="main" class="site-primary">
+		<div class="site-content">
+			<div id="content" class="main-content">
+
+<div class="module-border hide-mobile">
+	<div class="container">
+		<div class="module-border--inner"></div>
+	</div>
+</div>
+<div class="page-not-found">
+	<div class="page-not-found--inner">
+		<h1 class="entry-title">404</h1>
+		<h2 class="entry-subtitle">That page can&#039;t be found</h2>
+		<div class="entry-description">
+			<p>It looks like nothing was found at this location. Maybe try to search for what you are looking for?</p>
+		</div>
+
+		<div class="search_form">
+	<form class="search-form" id="search-form" action="https://klbtheme.com/" method="get">
+		<input class="form_control" type="text" name="s" placeholder="Search..." autocomplete="off">
+		<button type="submit"><i class="klb-right"></i></button>
+	</form>
+</div>		
+		<a href="https://klbtheme.com/" class="button light">Go To Homepage</a>
+	</div>
+</div>
+
+					</div><!-- main-content -->
+				</div><!-- site-content -->
+			</main><!-- site-primary -->
+
+		
+							
+		<footer class="site-footer">
+				<div class="footer-widgets">
+			<div class="container">
+				<div class="site-footer--wrapper">
+					<div class="row">
+
+
+											<div class="col col-12 col-lg-3">
+							<div class="klbfooterwidget widget widget_text">			<div class="textwidget"><p><img decoding="async" loading="lazy" class="alignnone  wp-image-438" src="https://klbtheme.com/wp-content/uploads/2022/07/oval-logo.png" alt="" width="45" height="45" srcset="https://klbtheme.com/wp-content/uploads/2022/07/oval-logo.png 80w, https://klbtheme.com/wp-content/uploads/2022/07/oval-logo-54x54.png 54w" sizes="(max-width: 45px) 100vw, 45px" /></p>
+<p>KlbTheme provides WordPress Themes and Website Templates.</p>
+</div>
+		</div>						</div>
+
+						<div class="col col-12 col-lg-3">
+							<div class="klbfooterwidget widget widget_tp_widget_recent_tweets"><h4 class="widget-title">TWITTER FEED</h4><strong>Could not authenticate you.</strong></div>						</div>
+
+						<div class="col col-12 col-lg-3">
+							<div class="klbfooterwidget widget widget_nav_menu"><h4 class="widget-title">QUICK LINKS</h4><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-92" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-92"><a href="http://klbtheme.com/">Home</a></li>
+<li id="menu-item-95" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-95"><a href="http://klbtheme.com/themes/architecture/">Corporate Themes</a></li>
+<li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94"><a href="http://klbtheme.com/themes/charity/">Nonprofit Themes</a></li>
+<li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="https://klbtheme.com/contact-us/">Contact Us</a></li>
+<li id="menu-item-93" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93"><a href="https://klbtheme.ticksy.com/">Support</a></li>
+</ul></div></div>						</div>
+
+						<div class="col col-12 col-lg-3">
+							<div class="klbfooterwidget widget widget_subscribe_form"><h4 class="widget-title">Subscribe For News</h4>		
+		  <div class="widget widget_newsletter">
+			<div class="site-newsletter">
+			  <p>Subscribe to our newsletter and get 10% off on your first order.</p>
+			  <script>(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.9 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-29" method="post" data-id="29" data-name="KlbTheme" ><div class="mc4wp-form-fields"><div class="form-wrapper">
+<input class="newsletter-input" type="email" name="EMAIL" placeholder="Your email address" required >
+<button type="submit" class="button">Subscribe</button>
+</div></div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1703785833" /><input type="hidden" name="_mc4wp_form_id" value="29" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin -->			</div>
+		  </div>
+		
+		
+		</div><div class="klbfooterwidget widget widget_footer_about">		
+		<div class="widget widget_text">
+			<div class="klb-about-widget textwidget">
+								<p></p>
+			</div>
+		</div>
+		</div>						</div>
+					
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<div class="subfooter">
+		<div class="container">
+			<div class="site-footer--wrapper">
+				<div class="site-copyright">
+											<p>Copyright 2022.KlbTheme . All rights reserved</p>
+									</div>
+													<div class="site-social">
+						<ul class="text dark">
+															<li>
+									<a href="https://www.behance.net/TheKlb" target="_blank" class="klb-behance">
+										<span class="social-icon"><i class="klb-klb-behance"></i></span>
+										<span class="social-text">klb-behance</span>
+										<span class="social-label">Follow</span>
+									</a>
+								</li>
+														<li>
+									<a href="https://www.facebook.com/klbtheme" target="_blank" class="klb-facebook">
+										<span class="social-icon"><i class="klb-klb-facebook"></i></span>
+										<span class="social-text">klb-facebook</span>
+										<span class="social-label">Follow</span>
+									</a>
+								</li>
+														<li>
+									<a href="https://dribbble.com/KlbTheme" target="_blank" class="klb-dribbble">
+										<span class="social-icon"><i class="klb-klb-dribbble"></i></span>
+										<span class="social-text">klb-dribbble</span>
+										<span class="social-label">Follow</span>
+									</a>
+								</li>
+														<li>
+									<a href="https://tr.pinterest.com/klbtheme/" target="_blank" class="klb-pinterest">
+										<span class="social-icon"><i class="klb-klb-pinterest"></i></span>
+										<span class="social-text">klb-pinterest</span>
+										<span class="social-label">Follow</span>
+									</a>
+								</li>
+												</ul>
+					</div>
+							</div>
+		</div>
+	</div>
+</footer>	
+		</div><!-- site--inner -->
+	</div><!-- site -->
+
+		<div class="search-holder">
+		<div class="search-holder--close">
+			<i class="klb-x"></i>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+				
+											<form action="https://klbtheme.com/" class="search-holder--form" role="search" method="get" id="searchform">
+				<input class="search-form-input" type="text" value="" name="s" id="s" placeholder="Search any Product">
+				<button type="submit"><i class="klb-search"></i></button>
+				<input type="hidden" name="post_type" value="product" />
+			  </form>										
+					<div class="search-message">
+						<p>Please type the word you want to search and press enter.</p>
+					</div>
+					<div class="most-viewed-products hide-mobile">
+						<div class="most-viewed-title">
+							<h3 class="entry-title klbtype-1">Most Viewed Products</h3>
+						</div>
+												<ul class="product_list_widget products">
+																					<li class="product">
+								<div class="product-content">
+									<div class="product-media">
+										<figure class="entry-media">
+											<a href="https://klbtheme.com/theme/blonwe-multipurpose-woocommerce-theme/"><img src="https://klbtheme.com/wp-content/uploads/2023/10/preview-150x150.png" alt="Cosmetsy"></a>
+										</figure>
+									</div>
+									<div class="product-detail">
+										<div class="entry-category">
+											<a href="https://klbtheme.com/themes/ecommerce/" rel="tag">eCommerce</a><a href="https://klbtheme.com/themes/multipurpose/" rel="tag">Multipurpose</a>										</div>
+										<h3 class="entry-name"><a href="https://klbtheme.com/theme/blonwe-multipurpose-woocommerce-theme/">Blonwe &#8211; Multipurpose WooCommerce Theme</a></h3>
+										<div class="entry-price">
+											<span class="quantity">
+											<del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>49.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>19.00</span></ins>											</span>
+										</div>
+									</div>
+								</div>
+							</li>
+																					<li class="product">
+								<div class="product-content">
+									<div class="product-media">
+										<figure class="entry-media">
+											<a href="https://klbtheme.com/theme/partdo-auto-parts-and-tools-shop-woocommerce-theme/"><img src="https://klbtheme.com/wp-content/uploads/2023/01/partdo-image-150x150.jpg" alt="Cosmetsy"></a>
+										</figure>
+									</div>
+									<div class="product-detail">
+										<div class="entry-category">
+											<a href="https://klbtheme.com/themes/auto-part/" rel="tag">Auto Part</a>										</div>
+										<h3 class="entry-name"><a href="https://klbtheme.com/theme/partdo-auto-parts-and-tools-shop-woocommerce-theme/">Partdo &#8211; Auto Parts and Tools Shop WooCommerce Theme</a></h3>
+										<div class="entry-price">
+											<span class="quantity">
+											<del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>49.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>39.00</span></ins>											</span>
+										</div>
+									</div>
+								</div>
+							</li>
+																					<li class="product">
+								<div class="product-content">
+									<div class="product-media">
+										<figure class="entry-media">
+											<a href="https://klbtheme.com/theme/clotya-fashion-store-ecommerce-theme/"><img src="https://klbtheme.com/wp-content/uploads/2022/07/Clotya-WordPress-Themes-150x150.jpg" alt="Cosmetsy"></a>
+										</figure>
+									</div>
+									<div class="product-detail">
+										<div class="entry-category">
+											<a href="https://klbtheme.com/themes/fashion/" rel="tag">Fashion</a><a href="https://klbtheme.com/themes/multipurpose/" rel="tag">Multipurpose</a><a href="https://klbtheme.com/themes/woocommerce/" rel="tag">WooCommerce</a>										</div>
+										<h3 class="entry-name"><a href="https://klbtheme.com/theme/clotya-fashion-store-ecommerce-theme/">Clotya &#8211; Fashion Store eCommerce Theme</a></h3>
+										<div class="entry-price">
+											<span class="quantity">
+											<del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>49.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>39.00</span></ins>											</span>
+										</div>
+									</div>
+								</div>
+							</li>
+													</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+			
+		
+  <div class="site-overlay"></div>
+
+  <script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script><!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://klbtheme.com/wp-admin/admin-ajax.php";
+</script>
+	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.8.1' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/klbtheme.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.8.1' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.8.2.1' id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/klbtheme.com","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=8.2.1' id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.8.2.1' id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=8.2.1' id='woocommerce-js'></script>
+<script id="rocket-browser-checker-js-after" type="text/javascript">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/wc-api\/v(.*)|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/klbtheme.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script id="rocket-preload-links-js-after" type="text/javascript">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_ad2a263c48882914811f091ea6c46f4e","fragment_name":"wc_fragments_ad2a263c48882914811f091ea6c46f4e","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=8.2.1' id='wc-cart-fragments-js'></script>
+<script type='text/javascript' id='tinvwl-js-extra'>
+/* <![CDATA[ */
+var tinvwl_add_to_wishlist = {"text_create":"Create New","text_already_in":"{product_name} already in Wishlist","simple_flow":"","hide_zero_counter":"","i18n_make_a_selection_text":"Please select some product options before adding this product to your wishlist.","tinvwl_break_submit":"No items or actions are selected.","tinvwl_clipboard":"Copied!","allow_parent_variable":"","block_ajax_wishlists_data":"","update_wishlists_data":"","hash_key":"ti_wishlist_data_ad2a263c48882914811f091ea6c46f4e","nonce":"8f4faed9bc","rest_root":"https:\/\/klbtheme.com\/wp-json\/","plugin_url":"https:\/\/klbtheme.com\/wp-content\/plugins\/ti-woocommerce-wishlist\/","wc_ajax_url":"\/?wc-ajax=tinvwl","stats":"","popup_timer":"6000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/ti-woocommerce-wishlist/assets/js/public.min.js?ver=2.7.4' id='tinvwl-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/vendor/gsap.min.js?ver=1.0' id='gsap-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/vendor/jquery.magnific-popup.min.js?ver=1.0' id='jquery-magnific-popup-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/vendor/perfect-scrollbar.min.js?ver=1.0' id='perfect-scrollbar-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/vendor/slick.min.js?ver=1.0' id='slick-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/custom/shopsidebar.js?ver=1.0' id='cosmetsy-shopsidebar-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/bundle.js?ver=1.0' id='cosmetsy-bundle-js'></script>
+<script type='text/javascript' id='cosmetsy-quick-ajax-js-extra'>
+/* <![CDATA[ */
+var MyAjax = {"ajaxurl":"https:\/\/klbtheme.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/custom/quick_ajax.js?ver=1.0.0' id='cosmetsy-quick-ajax-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/themes/cosmetsy/assets/js/custom/variationform.js?ver=1.0.0' id='cosmetsy-variationform-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/underscore.min.js?ver=1.13.4' id='underscore-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/wp-util.min.js?ver=6.3.2' id='wp-util-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js?ver=8.2.1' id='wc-add-to-cart-variation-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LdF06waAAAAAIIvlgF5HXonIjo7uHbbqEgEgNNu&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://klbtheme.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LdF06waAAAAAIIvlgF5HXonIjo7uHbbqEgEgNNu","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://klbtheme.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.8.1' id='wpcf7-recaptcha-js'></script>
+<script type='text/javascript' defer src='https://klbtheme.com/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=4.9.9' id='mc4wp-forms-api-js'></script>
+</body>
+</html>

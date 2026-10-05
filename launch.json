@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PHP XDebug",
+            "type": "php",
+            "request": "launch",
+            "runtimeArgs": [
+                "spark",
+                // "postman:generate",
+                // "--collectionname","BusinessEssential","--baseUrlVariable", "business_essential_local", "--filename mycollection.json",
+                "serve",
+                "--port",
+                "81",
+                "-dxdebug.mode=debug",
+                "-dxdebug.start_with_request=yes",
+                "localhost:81",
+                "-S",
+                // "xdebug.collect_includes = 0",
+                // "xdebug.collect_params = 0",
+            ],
+            "env": {
+                "XDEBUG_MODE": "debug",
+                "XDEBUG_SESSION": "my_project"
+            },
+            "externalConsole": false,
+            "program": "",
+            "cwd": "${workspaceRoot}",
+            "port": 9003,
+            "serverReadyAction": {
+                "pattern": "Development Server \\(http://localhost:([0-9]+)\\) started",
+                "uriFormat": "http://localhost:%s",
+                "action": "openExternally"
+            }
+        },
+    ]
+}

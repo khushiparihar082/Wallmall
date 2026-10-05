@@ -1,0 +1,567 @@
+ function product_listing($filter = [])
+    {
+        // Select product fields
+        $query = [
+            'select' => [],
+            'select_as' => [],
+            'select_fn' => [],
+            'select_gp' => []
+        ];
+        $customer_id = $_SESSION['customer_id'] ?? null;
+        // Select Start ------------------------------------------------------------------------------
+        $query['select'][] = 'product.product_id,product.product_name,product.category_type_id,product.category_id,product.brand_id';
+        $query['select_as'][] = 'product.variant_id as default_variant_id';
+        $query['select_wo_as'][] = 'product.variant_id';
+        if (isset($filter['other_fields']) && $filter['other_fields'] == true) {
+            $query['select'][] = "product.product_code,product.product_hsn_code,product.height,product.width,product.length,product.product_description,product.product_keyfeature,product.product_specialcare,product.product_refund_exchange,product.is_recommended,product.is_sponsore,product.is_returnable,product.is_exchangeable";
+            foreach (range(1, 3) as $i) {
+                $query['select_fn'][] = getImagePathQueryString("product.product_image$i");
+                $query['select_fn'][] = getImagePathQueryString("product.product_image$i", true);
+                $query['select'][] = "product.product_alt_text$i";
+            }
+        }
+        if (isset($filter['joins'])) {
+            $joins = $filter['joins'];
+            if (in_array('category_type', $joins)) {
+                $query['select'][] = 'category_type.category_type_name';
+                if (isset($filter['category_type']['other_fields']) && $filter['category_type']['other_fields'] == true) {
+                    $query['select'][] = 'category_type.category_type_description,category_type.category_type_alt_text';
+                    $query['select_fn'][] = getImagePathQueryString('category_type.category_type_image');
+                    $query['select_fn'][] = getImagePathQueryString('category_type.category_type_image', true);
+                }
+            }
+            if (in_array('category', $joins)) {
+                $query['select'][] = 'category.category_name';
+                if (isset($filter['category']['other_fields']) && $filter['category']['other_fields'] == true) {
+                    $query['select'][] = 'category.category_description,category.category_alt_text';
+                    $query['select_fn'][] = getImagePathQueryString('category.category_image');
+                    $query['select_fn'][] = getImagePathQueryString('category.category_image', true);
+                }
+            }
+            if (in_array('brand', $joins)) {
+                $query['select'][] = 'brand.brand_name';
+                if (isset($filter['brand']['other_fields']) && $filter['brand']['other_fields'] == true) {
+                    $query['select'][] = 'brand.brand_description,brand.brand_alt_text';
+                    $query['select_fn'][] = getImagePathQueryString('brand.brand_image');
+                    $query['select_fn'][] = getImagePathQueryString('brand.brand_image', true);
+                }
+            }
+            // Select Variant
+            if (in_array('variant', $joins)) {
+                $query['select'][] = 'product_variant.variant_id,product_variant.variant_sku_code,product_variant.variant_name,product_variant.unit_id,product_variant.color_id';
+                $query['select_as'][] = 'product_variant.size_id as default_size_id';
+                $query['select_wo_as'][] = 'product_variant.size_id';
+
+                if (isset($filter['variant']['other_fields']) && $filter['variant']['other_fields'] == true) {
+                    $query['select'][] = 'product_variant.variant_weight,product_variant.mrp,product_variant.discount_per,product_variant.gst_per,product_variant.selling_price,product_variant.delivery_charge,product_variant.variant_description';
+                    foreach (range(1, 6) as $i) {
+                        $query['select_fn'][] = getImagePathQueryString("product_variant.variant_image$i");
+                        $query['select_fn'][] = getImagePathQueryString("product_variant.variant_image$i", true);
+                        $query['select'][] = "product_variant.variant_alt_text$i";
+                    }
+                    if (!isset($filter['ecommerce']) && $filter['ecommerce'] != true) {
+                        $query['select'][] = 'product_variant.purchase_rate,product_variant.cost_price,product_variant.profit_per,product_variant.profit_amt';
+                    }
+                    if (in_array('offer', $joins)) {
+                        // Calculate final_price with discount applied
+                        $final_price_expr = "ROUND(product_variant.selling_price * (1 - (COALESCE(offer.offer_discount, 0) / 100)), 0)";
+                        $query['select_fn'][] = "$final_price_expr as final_price";
+
+                        // Calculate final_discount percentage
+                        $query['select_fn'][] = "ROUND((1 - ($final_price_expr / product_variant.mrp)) * 100, 0) as final_discount";
+                    } else {
+                        // Calculate final_price without discount
+                        $final_price_expr = "ROUND(product_variant.selling_price, 0)";
+                        $query['select_fn'][] = "$final_price_expr as final_price";
+
+                        // Calculate final_discount percentage
+                        $query['select_fn'][] = "ROUND((1 - ($final_price_expr / product_variant.mrp)) * 100, 0) as final_discount";
+                    }
+                }
+                // Unit
+                if (in_array('unit', $joins)) {
+                    $query['select'][] = 'unit.unit_name';
+                }
+                // Size
+                if (in_array('size', $joins)) {
+                    $query['select'][] = 'size.size_id,size.size_name';
+                    // Stock
+                    if (in_array('stock', $joins)) {
+                        $query['select'][] = 'stock.quantity';
+                    }
+                    // Wishlist and Cart Integration
+                    if (!empty($customer_id)) {
+                        if (in_array('wishlist', $joins)) {
+                            $query['select'][] = 'customer_wishlist.customer_wishlist_id';
+                        }
+                        if (in_array('cart', $joins)) {
+                            $query['select'][] = 'customer_cart.customer_cart_id,customer_cart.cart_quantity';
+                            $query['select_fn'][] = '(product_variant.selling_price * customer_cart.cart_quantity) as CartItemTotal';
+                        }
+                    }
+                }
+                // Color
+                if (in_array('color', $joins)) {
+                    $query['select'][] = 'color.color_name,color.color_code,color_alt_text';
+                    $query['select_fn'][] = getImagePathQueryString('color.color_image');
+                    $query['select_fn'][] = getImagePathQueryString('color.color_image', true);
+                }
+                //OfferItem
+                if (in_array('offer', $joins)) {
+                    $query['select'][] = 'offer.offer_id,offer.offer_name,offer.offer_title,offer.offer_alt_text,offer.offer_type,offer.offer_from,offer.offer_to';
+                    $query['select_fn'][] = getNumericQueryString('offer.offer_discount');
+                    $query['select_fn'][] = getImagePathQueryString('offer.offer_image');
+                    $query['select_fn'][] = getImagePathQueryString('offer.offer_image', true);
+                }
+                // Customer Review
+                if (in_array('customer_review', $joins)) {
+                    $query['select'][] = 'ROUND(IFNULL(review_summary.review_rating_avg, 0), 1) as customer_rating';
+                    $query['select'][] = 'IFNULL(COUNT(review_summary.review_count_sum), 0) as customer_review_count';
+                }
+            }
+        }
+
+        $this->select(implode(',', $query['select']) ?? '');
+        $this->select(implode(',', $query['select_fn']) ?? '');
+        $this->select(implode(',', $query['select_as']) ?? '');
+        // Joins Start -------------------------------------------------------------------------------------
+        if (isset($filter['joins'])) {
+            if (in_array('category_type', $joins)) {
+                $this->join('category_type', 'category_type.category_type_id = product.category_type_id', 'left');
+            }
+            if (in_array('category', $joins)) {
+                $this->join('category', 'category.category_id = product.category_id', 'left');
+            }
+            if (in_array('brand', $joins)) {
+                $this->join('brand', 'brand.brand_id = product.brand_id', 'left');
+            }
+            // Wishlist
+            if (!empty($customer_id)) {
+                if (in_array('wishlist', $joins)) {
+                    $this->join('customer_wishlist', "customer_wishlist.customer_id = $customer_id AND customer_wishlist.product_id = product.product_id", 'left');
+                }
+            }
+            if (in_array('offer', $joins)) {
+                $current_date = date('Y-m-d');
+
+                // Join offer_item and product with an additional condition on the join
+                $this->join('offer_item', 'offer_item.product_id = product.product_id', 'left');
+
+                // Join offer with an additional condition for the date range within the ON clause
+                $this->join('offer', "offer.offer_id = offer_item.offer_id AND offer.offer_from <= '$current_date' AND offer.offer_to >= '$current_date'", 'left');
+            }
+            if (in_array('top_search', $joins)) {
+                $this->join('top_search_summary', 'top_search_summary.product_id = product.product_id', 'left');
+            }
+            if (in_array('variant', $joins)) {
+                if (isset($filter['default_variant_only']) && $filter['default_variant_only'] == false) {
+                    $this->join('product_variant', 'product_variant.product_id = product.product_id', 'left');
+                } else {
+                    $this->join('product_variant', 'product_variant.variant_id = product.variant_id', 'left');
+                }
+                if (in_array('customer_review', $joins)) {
+                    if (isset($filter['default_variant_only']) && $filter['default_variant_only'] == false) {
+                        $this->join('review_summary', 'review_summary.variant_id = product_variant.variant_id', 'left');
+                    } else {
+                        $this->join('review_summary', 'review_summary.variant_id = product.variant_id', 'left');
+                    }
+                }
+                if (in_array('unit', $joins)) {
+                    $this->join('unit', 'unit.unit_id = product_variant.unit_id', 'left');
+                }
+                if (in_array('size', $joins)) {
+                    if (isset($filter['default_size_only']) && $filter['default_size_only'] == false) {
+                        $this->join('size_vs_variant', 'size_vs_variant.variant_id = product_variant.variant_id', 'left');
+                        $this->join('size', 'size.size_id = size_vs_variant.size_id', 'left');
+                    } else {
+                        $this->join('size', 'size.size_id = product_variant.size_id', 'left');
+                    }
+                    // Stock
+                    if (in_array('stock', $joins)) {
+                        $variant_clause = isset($filter['default_variant_only']) && $filter['default_variant_only'] == false
+                            ? "stock.variant_id = product_variant.variant_id"
+                            : "stock.variant_id = product.variant_id";
+
+                        $size_clause = isset($filter['default_size_only']) && $filter['default_size_only'] == false
+                            ? "stock.size_id = size.size_id"
+                            : "stock.size_id = product_variant.size_id";
+
+                        $this->join('stock', "$variant_clause and $size_clause", 'left');
+                    }
+                    // Cart
+                    if (!empty($customer_id)) {
+                        if (in_array('cart', $joins)) {
+                            $this->join('customer_cart', "customer_cart.customer_id = $customer_id AND customer_cart.product_id = product.product_id AND customer_cart.variant_id = product_variant.variant_id AND customer_cart.size_id = size.size_id", 'left');
+                        }
+                    }
+                }
+                if (in_array('color', $joins)) {
+                    $this->join('color', 'color.color_id = product_variant.color_id', 'left');
+                }
+            }
+        }
+        // Where Clouse --------------------------------------------------------------------------
+        if (isset($filter['joins'])) {
+            if (in_array('category_type', $joins)) {
+                if (isset($filter['category_type']) && is_array($filter['category_type'])) {
+                    $sub_filter = $filter['category_type'];
+                    if (isset($sub_filter['category_type_name']) && !empty($sub_filter['category_type_name'])) {
+                        $this->where('category_type.category_type_name', trim($sub_filter['category_type_name']));
+                    }
+                    if (isset($sub_filter['category_type_ids']) && !empty($sub_filter['category_type_ids']) && is_array($sub_filter['category_type_ids']) && isset($sub_filter['category_type_ids'][0])) {
+                        $this->whereIn('category_type.category_type_id', $sub_filter['category_type_ids']);
+                    }
+                    if (isset($sub_filter['category_type_names']) && !empty($sub_filter['category_type_names']) && is_array($sub_filter['category_type_names']) && isset($sub_filter['category_type_names'][0])) {
+                        $this->whereIn('category_type.category_type_name', $sub_filter['category_type_names']);
+                    }
+                    if (isset($sub_filter['category_type_id']) && !empty($sub_filter['category_type_id'])) {
+                        $this->where('category_type.category_type_id', trim($sub_filter['category_type_id']));
+                    }
+                    if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+                        $this->where('category_type.is_active', 1);
+                    }
+                }
+            }
+            if (in_array('category', $joins)) {
+                if (isset($filter['category']) && is_array($filter['category'])) {
+                    $sub_filter = $filter['category'];
+                    if (isset($sub_filter['category_name']) && !empty($sub_filter['category_name'])) {
+                        $this->where('category.category_name', trim($sub_filter['category_name']));
+                    }
+                    if (isset($sub_filter['category_ids']) && !empty($sub_filter['category_ids']) && is_array($sub_filter['category_ids']) && isset($sub_filter['category_ids'][0])) {
+                        $this->whereIn('category.category_id', $sub_filter['category_ids']);
+                    }
+                    if (isset($sub_filter['category_names']) && !empty($sub_filter['category_names']) && is_array($sub_filter['category_names']) && isset($sub_filter['category_names'][0])) {
+                        $this->whereIn('category.category_name', $sub_filter['category_names']);
+                    }
+                    if (isset($sub_filter['category_id']) && !empty($sub_filter['category_id'])) {
+                        $this->where('category.category_id', trim($sub_filter['category_id']));
+                    }
+                    if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+                        $this->where('category.is_active', 1);
+                    }
+                }
+            }
+            if (in_array('brand', $joins)) {
+                if (isset($filter['brand']) && is_array($filter['brand'])) {
+                    $sub_filter = $filter['brand'];
+                    if (isset($sub_filter['brand_name']) && !empty($sub_filter['brand_name'])) {
+                        $this->where('brand.brand_name', trim($sub_filter['brand_name']));
+                    }
+                    if (isset($sub_filter['brand_ids']) && !empty($sub_filter['brand_ids']) && is_array($sub_filter['brand_ids']) && isset($sub_filter['brand_ids'][0])) {
+                        $this->whereIn('brand.brand_id', $sub_filter['brand_ids']);
+                    }
+                    if (isset($sub_filter['brand_names']) && !empty($sub_filter['brand_names']) && is_array($sub_filter['brand_names']) && isset($sub_filter['brand_names'][0])) {
+                        $this->whereIn('brand.brand_name', $sub_filter['brand_names']);
+                    }
+                    if (isset($sub_filter['brand_id']) && !empty($sub_filter['brand_id'])) {
+                        $this->where('brand.brand_id', trim($sub_filter['brand_id']));
+                    }
+                    if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+                        $this->where('brand.is_active', 1);
+                    }
+                }
+            }
+            if (in_array('variant', $joins)) {
+                if (isset($filter['variant']) && is_array($filter['variant'])) {
+                    $sub_filter = $filter['variant'];
+                    if (isset($sub_filter['variant_name']) && !empty($sub_filter['variant_name'])) {
+                        $this->where('product_variant.variant_name', trim($sub_filter['variant_name']));
+                    }
+                    if (isset($sub_filter['variant_ids']) && !empty($sub_filter['variant_ids']) && is_array($sub_filter['variant_ids']) && isset($sub_filter['variant_ids'][0])) {
+                        $this->whereIn('product_variant.variant_id', $sub_filter['variant_ids']);
+                    }
+                    if (isset($sub_filter['variant_names']) && !empty($sub_filter['variant_names']) && is_array($sub_filter['variant_names']) && isset($sub_filter['variant_names'][0])) {
+                        $this->whereIn('product_variant.variant_name', $sub_filter['variant_names']);
+                    }
+                    if (isset($sub_filter['variant_id']) && !empty($sub_filter['variant_id'])) {
+                        $this->where('product_variant.variant_id', trim($sub_filter['variant_id']));
+                    }
+                    if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+                        $this->where('product_variant.is_active', 1);
+                    }
+                }
+                if (in_array('size', $joins)) {
+                    if (isset($filter['size']) && is_array($filter['size'])) {
+                        $sub_filter = $filter['size'];
+                        if (isset($sub_filter['size_name']) && !empty($sub_filter['size_name'])) {
+                            $this->where('size.size_name', trim($sub_filter['size_name']));
+                        }
+                        if (isset($sub_filter['size_ids']) && !empty($sub_filter['size_ids']) && is_array($sub_filter['size_ids']) && isset($sub_filter['size_ids'][0])) {
+                            $this->whereIn('size.size_id', $sub_filter['size_ids']);
+                        }
+                        if (isset($sub_filter['size_name']) && !empty($sub_filter['size_name']) && is_array($sub_filter['size_name']) && isset($sub_filter['size_name'][0])) {
+                            $this->whereIn('size.size_name', $sub_filter['size_name']);
+                        }
+                        if (isset($sub_filter['size_id']) && !empty($sub_filter['size_id'])) {
+                            $this->where('size.size_id', trim($sub_filter['size_id']));
+                        }
+                    }
+                    // Stock
+                    if (isset($filter['availableStock']) && $filter['availableStock'] == true) {
+                        $this->where('stock.quantity >', 0);
+                    }
+                    // Wishlist
+                    if (!empty($customer_id)) {
+                        if (in_array('wishlist', $joins)) {
+                            if (isset($filter['wishlist']['wishlist_only']) && $filter['wishlist']['wishlist_only']) {
+                                $this->where('customer_wishlist.customer_id', $customer_id);
+                            }
+                        }
+                    }
+                    // Cart
+                    if (!empty($customer_id)) {
+                        if (in_array('cart', $joins)) {
+                            if (isset($filter['cart']['cart_only']) && $filter['cart']['cart_only']) {
+                                $this->where('customer_cart.customer_id', $customer_id);
+                            }
+                            if (isset($filter['cart']['customer_cart_ids']) && is_array($filter['cart']['customer_cart_ids']) && !empty($filter['cart']['customer_cart_ids'])) {
+                                $this->whereIn('customer_cart.customer_cart_id', $filter['cart']['customer_cart_ids']);
+                            }
+                        }
+                    }
+                }
+                if (isset($filter['feature'])) {
+                    if (isset($filter['feature']['feature_names']) && !empty($filter['feature']['feature_names'])) {
+                        $pvfModel = $this->getProductVsFeatureModel();
+
+                        // Select the product_id from product_vs_feature table
+                        $pvfModel->select('product_vs_feature.product_id');
+
+                        // Join with the feature table to filter by feature names
+                        $pvfModel->join('feature', 'product_vs_feature.feature_id = feature.feature_id');
+
+                        // Filter by feature names
+                        $pvfModel->whereIn('feature.feature_name', $filter['feature']['feature_names']);
+
+                        // Group by product_id to count the number of distinct feature names for each product
+                        $pvfModel->groupBy('product_vs_feature.product_id');
+
+                        // Ensure that only products with the exact count of distinct feature names are returned
+                        $pvfModel->having('COUNT(DISTINCT feature.feature_name) = ' . count($filter['feature']['feature_names']));
+                        $rawSql = $pvfModel->builder->getCompiledSelect(false);
+                        $this->where('product.product_id IN (' . $rawSql . ')');
+                    }
+                }
+
+                if (in_array('color', $joins)) {
+                    if (isset($filter['color']) && is_array($filter['color'])) {
+                        $sub_filter = $filter['color'];
+                        if (isset($sub_filter['color_name']) && !empty($sub_filter['color_name'])) {
+                            $this->where('color.color_name', trim($sub_filter['color_name']));
+                        }
+                        if (isset($sub_filter['color_ids']) && !empty($sub_filter['color_ids']) && is_array($sub_filter['color_ids']) && isset($sub_filter['color_ids'][0])) {
+                            $this->whereIn('color.color_id', $sub_filter['color_ids']);
+                        }
+                        if (isset($sub_filter['color_names']) && !empty($sub_filter['color_names']) && is_array($sub_filter['color_names']) && isset($sub_filter['color_names'][0])) {
+                            $this->whereIn('color.color_name', $sub_filter['color_names']);
+                        }
+                        if (isset($sub_filter['color_id']) && !empty($sub_filter['color_id'])) {
+                            $this->where('color.color_id', trim($sub_filter['color_id']));
+                        }
+                    }
+                }
+                if (isset($filter['price'])) {
+
+                    if (!empty($filter['price']['from'])) {
+                        $this->where('product_variant.selling_price >=', $filter['price']['from']);
+                    }
+                    if (!empty($filter['price']['to'])) {
+                        $this->where('product_variant.selling_price <=', $filter['price']['to']);
+                    }
+                }
+                if (isset($filter['discount'])) {
+                    if (!empty($filter['discount']['from'])) {
+                        $this->where('product_variant.discount_per >=', $filter['discount']['from']);
+                    }
+                    if (!empty($filter['discount']['to'])) {
+                        $this->where('product_variant.discount_per <=', $filter['discount']['to']);
+                    }
+                }
+                if (isset($filter['priceRange'])) {
+
+                    if (!empty($filter['price']['min'])) {
+                        $this->where('product_variant.selling_price >=', $filter['price']['min']);
+                    }
+                    if (!empty($filter['price']['max'])) {
+                        $this->where('product_variant.selling_price <=', $filter['price']['max']);
+                    }
+                }
+                if (in_array('offer', $joins)) {
+                    if (isset($filter['offer']) && is_array($filter['offer'])) {
+                        $sub_filter = $filter['offer'];
+                        if (isset($sub_filter['offer_name']) && !empty($sub_filter['offer_name'])) {
+                            $this->where('offer.offer_name', trim($sub_filter['offer_name']));
+                        }
+                        if (isset($sub_filter['offer_ids']) && !empty($sub_filter['offer_ids']) && is_array($sub_filter['offer_ids']) && isset($sub_filter['offer_ids'][0])) {
+                            $this->whereIn('offer.offer_id', $sub_filter['offer_ids']);
+                        }
+                        if (isset($sub_filter['offer_names']) && !empty($sub_filter['offer_names']) && is_array($sub_filter['offer_names']) && isset($sub_filter['offer_names'][0])) {
+                            $this->whereIn('offer.offer_name', $sub_filter['offer_names']);
+                        }
+                        if (isset($sub_filter['offer_id']) && !empty($sub_filter['offer_id'])) {
+                            $this->where('offer.offer_id', trim($sub_filter['offer_id']));
+                        }
+                        if (isset($sub_filter['offer_only']) && $sub_filter['offer_only'] == true) {
+                            $this->where('offer.offer_id IS NOT NULL');
+                        }
+                    }
+                }
+            }
+        }
+        if (isset($filter['availableStock']) && $filter['availableStock']) {
+            $this->where('product.stock >', 0);
+        }
+        if (isset($filter['limit'])) {
+            if (!empty($filter['limit']['count'])) {
+                $this->limit($filter['limit']['count']);
+            }
+            if (!empty($filter['limit']['start_from'])) {
+                $this->offset($filter['limit']['start_from']);
+            }
+        }
+        if (isset($filter['OrderBy']) && !empty($filter['OrderBy'])) {
+            switch ($filter['OrderBy']) {
+                case 'top_search':
+                    if (in_array('top_search', $joins)) {
+                        $this->orderBy("top_search_summary.total_search_count");
+                    }
+                    break;
+                case 'new_arrival':
+                    $this->orderBy('product.created_at', 'desc');
+                    break;
+                case 'top_rating':
+                    if (in_array('customer_review', $joins)) {
+                        $this->orderBy('review_summary.review_count_sum', 'desc');
+                        $this->orderBy('review_summary.review_rating_avg', 'desc');
+                    }
+                    break;
+                case 'recommended':
+                    $this->orderBy('product.is_recommended', 'desc');
+                    break;
+                case 'sponsored':
+                    $this->orderBy('product.is_sponsore', 'desc');
+                    break;
+                case 'price_lowest':
+                    if (in_array('variant', $joins)) {
+                        $this->orderBy('final_price', 'asc');
+                    }
+                    break;
+                case 'price_highest':  // Corrected Typo
+                    if (in_array('variant', $joins)) {
+                        $this->orderBy('final_price', 'desc');
+                    }
+                    break;
+                case 'discount_highest':
+                    if (in_array('variant', $joins)) {
+                        $this->orderBy('final_discount', 'desc');
+                    }
+                    break;
+                default:
+                    // Handle unexpected cases or set a default order
+                    break;
+            }
+        }
+
+        $data = $this->findAll() ?? [];
+
+        // Product and Social Media URL
+        if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+            $this->addProductDetailPageUrlWithSocialMedia($data);
+        }
+        // Multi Variant
+        if (isset($filter['multivariant']) && $filter['multivariant'] == true) {
+            $product_ids = array_unique(array_column($data, 'product_id'));
+            $vm = $this->getProductVariantModel();
+            $vm->select('product_variant.variant_id,product_variant.variant_sku_code,product_variant.variant_name,product_variant.unit_id,product_variant.color_id,product_variant.size_id as default_size_id');
+            $vm->select('product_variant.variant_weight,product_variant.mrp,product_variant.discount_per,product_variant.gst_per,product_variant.selling_price,product_variant.delivery_charge,product_variant.variant_description,product_variant.variant_alt_text1');
+            $vm->select(getImagePathQueryString('product_variant.variant_image1'));
+            $vm->select(getImagePathQueryString('product_variant.variant_image1', true));
+            if (!isset($filter['ecommerce']) || $filter['ecommerce'] != true) {
+                $vm->select('product_variant.purchase_rate,product_variant.cost_price,product_variant.profit_per,product_variant.profit_amt');
+            }
+            $vm->select('product.product_name');
+
+            // Offer
+            if (isset($filter['joins'])) {
+                if (in_array('offer', $filter['joins'])) {
+                    $final_price_expr = "ROUND(product_variant.selling_price * (1 - (COALESCE(offer.offer_discount, 0) / 100)), 0)";
+                    $vm->select("$final_price_expr as final_price");
+                    $vm->select("ROUND((1 - ($final_price_expr / product_variant.mrp)) * 100, 0) as final_discount");
+                } else {
+                    $final_price_expr = "ROUND(product_variant.selling_price, 0)";
+                    $vm->select("$final_price_expr as final_price");
+                    $vm->select("ROUND((1 - ($final_price_expr / product_variant.mrp)) * 100, 0) as final_discount");
+                }
+            }
+
+            if (isset($filter['joins'])) {
+                if (in_array('offer', $filter['joins'])) {
+                    $current_date = date('Y-m-d');
+                    $vm->join('offer_item', 'offer_item.product_id = product.product_id', 'left');
+                    $vm->join('offer', "offer.offer_id = offer_item.offer_id AND offer.offer_from <= '$current_date' AND offer.offer_to >= '$current_date'", 'left');
+                }
+                if (in_array('customer_review', $filter['joins'])) {
+                    $vm->join('review_summary', 'review_summary.variant_id = product_variant.variant_id', 'left');
+                }
+            }
+
+            $vm->whereIn('product_variant.product_id', $product_ids);
+            if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+                $vm->where('product_variant.is_active', 1);
+            }
+
+            $variant_data = $vm->findAll() ?? [];
+            if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+                $this->addProductDetailPageUrlWithSocialMedia($variant_data);
+            }
+
+            $variant_data_by_product = [];
+            foreach ($variant_data as $variant) {
+                $variant_data_by_product[$variant['product_id']][] = $variant;
+            }
+
+            foreach ($data as $key => &$row) {
+                $row['variants'] = $variant_data_by_product[$row['product_id']] ?? [];
+            }
+
+            if (isset($filter['multisizes']) && $filter['multisizes']) {
+                $size_vs_variant_model = $this->getSizeVsVariantModel();
+                $sizes_data = $size_vs_variant_model
+                    ->select('size.size_id, size_vs_variant.variant_id')
+                    ->autoJoin()
+                    ->findAll();
+
+                $sizes_by_variant = [];
+                foreach ($sizes_data as $size) {
+                    $sizes_by_variant[$size['variant_id']][] = $size['size_id'];
+                }
+
+                foreach ($variant_data as &$variant) {
+                    $variant['sizes'] = $sizes_by_variant[$variant['variant_id']] ?? [];
+                }
+            }
+        }
+
+        // Multi Feature
+        if (isset($filter['multifeature']) && $filter['multifeature'] == true) {
+            $product_ids = array_unique(array_column($data, 'product_id'));
+            $pvfm = $this->getProductVsFeatureModel();
+            $pvfm->autoJoin(true);
+            $pvfm->whereIn('product_vs_feature.product_id', $product_ids);
+            if (isset($filter['ecommerce']) && $filter['ecommerce']) {
+                $pvfm->where('feature.is_active', 1);
+            }
+            $features_data = $pvfm->findAll() ?? [];
+
+            $features_by_product = [];
+            foreach ($features_data as $feature) {
+                $features_by_product[$feature['product_id']][] = $feature;
+            }
+
+            foreach ($data as $key => &$row) {
+                $row['features'] = $features_by_product[$row['product_id']] ?? [];
+            }
+        }
+        return $data;
+    }
