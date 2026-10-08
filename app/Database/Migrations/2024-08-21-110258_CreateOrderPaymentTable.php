@@ -55,6 +55,15 @@ class CreateOrderPaymentTable extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
+            'payment_mode' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'order_total' => [
+                'type'       => 'DECIMAL',
+                'constraint' => '10,2',
+                'default' => 0.00,
+            ],
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
         ]);

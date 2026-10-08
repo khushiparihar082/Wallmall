@@ -64,6 +64,25 @@ class CreateCustomerTable extends Migration
                 'type' => 'BOOLEAN',
                 'default' => true,
             ],
+            'last_activity_date' => [
+                "type" => 'DATETIME',
+                "null" => true,
+            ],
+            'is_patner' => [
+                'type' => 'TINYINT',
+                'constraint' => 1,
+                'null' => true,
+            ],
+            'refferal_patner_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'customer_upi_id' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => true,
+            ],
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
         ]);

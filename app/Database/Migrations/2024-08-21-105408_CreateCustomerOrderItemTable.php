@@ -123,6 +123,26 @@ class CreateCustomerOrderItemTable extends Migration
                 'constraint' => 255,
                 'null'       => false,  // Ensuring this field is not nullable
             ],
+            'return_exchange_image1' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
+            ],
+            'return_exchange_image2' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
+            ],
+            'return_exchange_image3' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
+            ],
+            'return_exchange_image4' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
+            ],
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
         ]);

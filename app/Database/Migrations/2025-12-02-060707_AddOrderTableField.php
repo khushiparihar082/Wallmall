@@ -8,7 +8,7 @@ class AddOrderTableField extends Migration
 {
     public function up()
     {
-        $this->forge->addColumn('employee', [
+        $this->forge->addColumn('order', [
            
             'status_action_id' => [
                 'type' => 'INT',

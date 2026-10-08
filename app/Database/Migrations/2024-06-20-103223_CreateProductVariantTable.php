@@ -176,6 +176,11 @@ class CreateProductVariantTable extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'cod_charges' => [
+                'type' => 'DECIMAL',
+                'constraint' => '10,2',
+                'default' => '0.00',
+            ],
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
         ]);
@@ -185,7 +190,7 @@ class CreateProductVariantTable extends Migration
         $this->forge->addForeignKey('unit_id', 'unit', 'unit_id', 'RESTRICT', 'RESTRICT');
         $this->forge->addForeignKey('size_id', 'size', 'size_id', 'RESTRICT', 'RESTRICT');
         $this->forge->addForeignKey('color_id', 'color', 'color_id', 'RESTRICT', 'RESTRICT');
-        
+
         $this->forge->createTable('product_variant', true);
 
         $this->forge->addColumn('product', [

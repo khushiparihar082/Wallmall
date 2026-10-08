@@ -124,6 +124,48 @@ class CreateProductTable extends Migration
                 'type' => 'BOOLEAN',
                 'default' => true,
             ],
+            'spotlight_image' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
+            'fluencer_video' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
+             'is_fluencer' => [
+                'type' => 'TINYINT',
+                'constraint' => 1,
+                'null' => true,
+            ],
+             'is_spotlight' => [
+                'type' => 'TINYINT',
+                'constraint' => 1,
+                'null' => true,
+            ],
+            'spotlight_alt_text' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
+            'fluencer_alt_text' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
+            'spotlight_product_title' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
+            'spotlight_product_description' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
+            'view_count' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
+            'product_return_exchange_days' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
         ]);

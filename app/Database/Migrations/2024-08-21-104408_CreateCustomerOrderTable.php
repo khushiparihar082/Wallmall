@@ -138,6 +138,21 @@ class CreateCustomerOrderTable extends Migration
                 'null'       => true,
                 'default' => 0.00,
             ],
+            'cod_charges_total' => [
+                'type'       => 'DECIMAL',
+                'constraint' => '10,2',
+                'default' => 0.00,
+            ],
+            'remaining_total' => [
+                'type'       => 'DECIMAL',
+                'constraint' => '10,2',
+                'default' => 0.00,
+            ],
+            'is_order_patner_request' => [
+                'type' => 'TINYINT',
+                'constraint' => 1,
+                'null' => true,
+            ],
             'order_remark' => [
                 'type' => 'TEXT',
                 'null' => true,
@@ -171,6 +186,7 @@ class CreateCustomerOrderTable extends Migration
                 'default' => 'order_payment_pending',
                 'null'    => false,  // Ensuring this field is not nullable
             ],
+
             'docket_number' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255,
@@ -208,6 +224,29 @@ class CreateCustomerOrderTable extends Migration
                 'constraint' => 255,
                 'null'       => true,
             ],
+            'order_return_exchange_days' => [
+                'type'           => 'INT',
+                'unsigned'      => true,
+            ],
+            'wallet_used_amount' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
+            ],
+            'delhivery_waybill' => [
+                'type' => 'TEXT',
+            ],
+            'return_shipping_charge' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+                'null'       => true,
+            ],
+            'is_return_shipping_charge_agree' => [
+                'type' => 'TINYINT',
+                'constraint' => 1,
+                'null' => true,
+            ],
+
             'created_at datetime default current_timestamp',
             'updated_at datetime default current_timestamp on update current_timestamp',
         ]);
