@@ -2316,8 +2316,8 @@ class AdminApiController extends BaseController
             }
             $userdata['token'] = $token;
             $userdata['logged_in'] = true;
-            $FC = new FirebaseController();
-            $userdata = array_merge($userdata, $FC->getFrontendIntregationData());
+            // $FC = new FirebaseController();
+            // $userdata = array_merge($userdata, $FC->getFrontendIntregationData());
             $session = \Config\Services::session();
             $session->set($userdata);
             return formatApiResponse($this->request, $this->response, ApiResponseStatusCode::OK, 'Login Successfull', $userdata);

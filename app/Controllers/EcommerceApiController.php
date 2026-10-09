@@ -862,10 +862,10 @@ class EcommerceApiController extends BaseController
         try {
             $category_type_list = $this->getCategoryTypeModel()
                 ->select('category_type.category_type_id,category_type.category_type_name,category_type.category_type_alt_text')
-                ->select(getImagePathQueryString('category_type_image'))
-                ->select(getImagePathQueryString('category_type_image', true))
-                ->select(getImagePathQueryString('category_type_icon'))
-                ->select(getImagePathQueryString('category_type_icon', true))
+                // ->select(getImagePathQueryString('category_type_image'))
+                // ->select(getImagePathQueryString('category_type_image', true))
+                // ->select(getImagePathQueryString('category_type_icon'))
+                // ->select(getImagePathQueryString('category_type_icon', true))
                 ->select('COUNT(product.product_id) AS product_count_category_type_wise')
                 ->select('MAX(product_variant.selling_price) AS lowest_selling_price')
                 ->join('product', 'product.category_type_id = category_type.category_type_id AND product.is_active = 1')
@@ -2004,7 +2004,7 @@ class EcommerceApiController extends BaseController
                 // WEBSITE SETTINGS
                 $walletActivationAmount = $website_data['website_profile']['wallet_activation_amount'];
                 $level1Percent = $website_data['website_profile']['level1_commission_percentage'];
-                $level2Percent = $website_data['website_profile']['level2_comission_percentage'];
+                $level2Percent = $website_data['website_profile']['level2_commission_percentage'];
 
                 // -------------------------------------------------------------------
                 // 1️⃣ SELF CUSTOMER COMMISSION (20%) WHEN NOT PARTNER

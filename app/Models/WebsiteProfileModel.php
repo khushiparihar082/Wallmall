@@ -135,7 +135,7 @@ class WebsiteProfileModel extends FunctionModel
         'level1',
         'level1_commission_percentage',
         'level2',
-        'level2_comission_percentage',
+        'level2_commission_percentage',
         'wallet_activation_amount',
         'wallet_withdrawal_amount',
         'firm_pincode',
@@ -271,13 +271,13 @@ class WebsiteProfileModel extends FunctionModel
         'image_slider_mob_img_5' => 'permit_empty',
         'image_slider_mob_img_alt_5' =>  'permit_empty',
         'image_slider_mob_redirect_url_5' => 'permit_empty',
-        'level1' => 'required',
-        'level1_commission_percentage' => 'required',
-        'level2' => 'required',
-        'level2_comission_percentage' => 'required',
-        'wallet_activation_amount' => 'required',
-        'wallet_withdrawal_amount' => 'required',
-        'pickup_location' =>'required',
+        'level1' => 'permit_empty',
+        'level1_commission_percentage' => 'permit_empty',
+        'level2' => 'permit_empty',
+        'level2_commission_percentage' => 'permit_empty',
+        'wallet_activation_amount' => 'permit_empty',
+        'wallet_withdrawal_amount' => 'permit_empty',
+        'pickup_location' => 'required',
         'order_tracking_url' => 'permit_empty'
     ];
 
@@ -427,12 +427,12 @@ class WebsiteProfileModel extends FunctionModel
         'disclaimer_page_seo_description.max_length' => 'Maximum length exceeded for SEO description on the Disclaimer page (max 170 characters).',
         'disclaimer_page_content.permit_empty' => 'The Disclaimer page content can be empty.',
 
-        'level1.required' => 'Level 1 field is required.',
+        //'level1.required' => 'Level 1 field is required.',
         'level1_commission_percentage.required' => 'Level 1 Commission Percentage field is required.',
-        'level2.required' => 'Level 2 field is required.',
-        'level2_comission_percentage.required' => 'Level 2 Commission Percentage field is required.',
-        'wallet_activation_amount.required' => 'E-Wallet Activation Amount field is required.',
-        'wallet_withdrawal_amount.required' => 'E-Wallet Withdrawal Amount field is required.',
+        //'level2.required' => 'Level 2 field is required.',
+        'level2_commission_percentage.required' => 'Level 2 Commission Percentage field is required.',
+        //'wallet_activation_amount.required' => 'E-Wallet Activation Amount field is required.',
+        // 'wallet_withdrawal_amount.required' => 'E-Wallet Withdrawal Amount field is required.',
         'pickup_location' => 'Pickup location is required. Please enter the exact pickup location name as configured in the Delhivery admin panel.'
     ];
 

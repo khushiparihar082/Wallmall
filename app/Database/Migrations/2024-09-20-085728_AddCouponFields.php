@@ -42,6 +42,42 @@ class AddCouponFields extends Migration
                 'constraint' => ['after_registration', 'after_order_placed', 'after_delivered'],
 
             ],
+            'level1' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'level1_commission_percentage' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'level2' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'level2_commission_percentage' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'wallet_activation_amount' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'wallet_withdrawal_amount' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'firm_pincode' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'pickup_location' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'order_tracking_url' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
 
         ]);
     }

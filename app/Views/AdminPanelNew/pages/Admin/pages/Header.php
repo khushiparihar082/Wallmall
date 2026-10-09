@@ -128,12 +128,12 @@
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="level2_comission_percentage" class="form-label">Area StockList Commision Percentage</label>
+                    <label for="level2_commission_percentage" class="form-label">Area StockList Commision Percentage</label>
                     <div class="col-md-4 p-0">
                     </div>
                     <div>
-                        <input autocomplete="off" type="number" class="form-control" id="level2_comission_percentage" name="level2_comission_percentage" max="100" value="<?= @$level2_comission_percentage ?>" placeholder="Enter commission percentage">
-                        <span class="error-message" id="level2_comission_percentage-error"></span>
+                        <input autocomplete="off" type="number" class="form-control" id="level2_commission_percentage" name="level2_commission_percentage" max="100" value="<?= @$level2_commission_percentage ?>" placeholder="Enter commission percentage">
+                        <span class="error-message" id="level2_commission_percentage-error"></span>
                     </div>
                 </div>
 

@@ -17,7 +17,6 @@ class AddOrderTableField extends Migration
             ],
             'status_action_date' => [
                 'type' => 'DATETIME',
-                'constraint' => 255,
                 'null' => true
             ],
             
