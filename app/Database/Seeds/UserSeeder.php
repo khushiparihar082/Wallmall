@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
             'fullname'   => 'Khushi Parihar',
             'email'      => 'digitalk082@gmail.com',
             'mobile'     => '7974822832',
-            'password'   => password_hash('1234', PASSWORD_DEFAULT),
+            'password'   => '$2y$10$RCrZ3bX1v4iz6HZ5li2pm.3NEyu9YZhAidThC6Ap/q3UiqZcVpkyW',
             'user_type'  => 'admin',
             'is_active'  => 1,
             'created_at' => date('Y-m-d H:i:s'),

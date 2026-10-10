@@ -44,6 +44,10 @@ class CreateCategoryTypeTable extends Migration
                 'type' => 'VARCHAR', 
                 'constraint' => 255, 
             ],
+            'category_type_icon' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255, 
+            ],
             'is_active' => [
                 'type' => 'BOOLEAN',
                 'default' => true,

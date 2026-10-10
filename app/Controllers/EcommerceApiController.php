@@ -486,9 +486,9 @@ class EcommerceApiController extends BaseController
             $customer_id = $parameters['customer_id'] ?? null;
             $page_data['header_footer_data'] = $this->header_footer() ?? [];
             $page_data['seo_data'] = $this->getSeo('home_page') ?? [];
-            $page_data['offer_list'] = $this->offers_array_data();
-            $page_data['new_arrival'] = $this->new_arrival_product_array_data();
-            $page_data['top_search'] = $this->top_search_product_array_data();
+            //$page_data['offer_list'] = $this->offers_array_data();
+            //$page_data['new_arrival'] = $this->new_arrival_product_array_data();
+            //$page_data['top_search'] = $this->top_search_product_array_data();
             // all offer list
             $all_offer = $this->all_offer_array_data($customer_id);
             $page_data['all_offer_list'] = $all_offer['offerList'];
@@ -862,10 +862,10 @@ class EcommerceApiController extends BaseController
         try {
             $category_type_list = $this->getCategoryTypeModel()
                 ->select('category_type.category_type_id,category_type.category_type_name,category_type.category_type_alt_text')
-                // ->select(getImagePathQueryString('category_type_image'))
-                // ->select(getImagePathQueryString('category_type_image', true))
-                // ->select(getImagePathQueryString('category_type_icon'))
-                // ->select(getImagePathQueryString('category_type_icon', true))
+                ->select(getImagePathQueryString('category_type_image'))
+                //->select(getImagePathQueryString('category_type_image', true))
+                ->select(getImagePathQueryString('category_type_icon'))
+//->select(getImagePathQueryString('category_type_icon', true))
                 ->select('COUNT(product.product_id) AS product_count_category_type_wise')
                 ->select('MAX(product_variant.selling_price) AS lowest_selling_price')
                 ->join('product', 'product.category_type_id = category_type.category_type_id AND product.is_active = 1')
