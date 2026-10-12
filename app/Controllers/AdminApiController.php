@@ -3204,8 +3204,8 @@ class AdminApiController extends BaseController
             'brand_name' => 'required|max_length[255]',
             'variant_name' => 'required|max_length[255]',
             'variant_sku_code' => 'required|max_length[255]',
-            'unit_name' => 'required|max_length[255]',
-            'color_name' => 'required|max_length[255]',
+            'unit_name' => 'permit_empty|max_length[255]',
+            'color_name' => 'permit_empty|max_length[255]',
             'purchase_rate' => 'required|max_length[10]|decimal',
             'mrp' => 'required|max_length[10]|decimal',
             'discount_per' => 'required|max_length[5]|decimal',
@@ -3237,24 +3237,24 @@ class AdminApiController extends BaseController
                 $isValid = false;
             }
         }
-        $color_name_unique = array_unique(array_column($rows, 'color_name'));
-        foreach ($color_name_unique as $index => $color_name) {
-            $result = $this->getColorModel()->where('color_name', $color_name)->findAll();
-            if (empty($result)) {
-                $errors[0]['color_name'] = $color_name . ' Color Name Not Found in Record';
-                $isValid = false;
-                break;
-            }
-        }
-        $unit_name_unique = array_unique(array_column($rows, 'unit_name'));
-        foreach ($unit_name_unique as $index => $unit_name) {
-            $result = $this->getUnitModel()->where('unit_name', $unit_name)->findAll();
-            if (empty($result)) {
-                $errors[0]['unit_name'] = $unit_name . ' Unit Name Not Found in Record';
-                $isValid = false;
-                break;
-            }
-        }
+        // $color_name_unique = array_unique(array_column($rows, 'color_name'));
+        // foreach ($color_name_unique as $index => $color_name) {
+        //     $result = $this->getColorModel()->where('color_name', $color_name)->findAll();
+        //     if (empty($result)) {
+        //         $errors[0]['color_name'] = $color_name . ' Color Name Not Found in Record';
+        //         $isValid = false;
+        //         break;
+        //     }
+        // }
+        // $unit_name_unique = array_unique(array_column($rows, 'unit_name'));
+        // foreach ($unit_name_unique as $index => $unit_name) {
+        //     $result = $this->getUnitModel()->where('unit_name', $unit_name)->findAll();
+        //     if (empty($result)) {
+        //         $errors[0]['unit_name'] = $unit_name . ' Unit Name Not Found in Record';
+        //         $isValid = false;
+        //         break;
+        //     }
+        // }
         return $isValid;
     }
 

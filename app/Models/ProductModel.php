@@ -113,7 +113,7 @@ class ProductModel extends FunctionModel
         'is_sponsore' => 'permit_empty',
         'is_exchangeable' => 'permit_empty',
         'is_active' => 'permit_empty',
-        'product_return_exchange_days' => 'required',
+        'product_return_exchange_days' => 'permit_empty',
     ];
     protected $validationMessages = [
         'product_name' => [

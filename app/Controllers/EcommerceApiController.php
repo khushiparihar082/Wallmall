@@ -498,37 +498,37 @@ class EcommerceApiController extends BaseController
             $page_data['categor_type'] = $categor_type;
 
             $category_type_products = [];
-            if (!empty($categor_type)) {
-                $count = 0; // counter
-                foreach ($categor_type as $row) {
-                    if ($count >= 5) { // limit to 5 categories
-                        break;
-                    }
-                    $category_type_name = $row['category_type_name'];
-                    $category_data = $this->category_type_product_array_data($category_type_name, 'ARRAY');
-                    if (!empty($category_data[$category_type_name])) {
-                        $category_type_products[$category_type_name] = $category_data[$category_type_name];
-                        $count++; // increase counter only if products found
-                    }
-                }
-            }
+            // if (!empty($categor_type)) {
+            //     $count = 0; // counter
+            //     foreach ($categor_type as $row) {
+            //         if ($count >= 5) { // limit to 5 categories
+            //             break;
+            //         }
+            //         $category_type_name = $row['category_type_name'];
+            //         $category_data = $this->category_type_product_array_data($category_type_name, 'ARRAY');
+            //         if (!empty($category_data[$category_type_name])) {
+            //             $category_type_products[$category_type_name] = $category_data[$category_type_name];
+            //             $count++; // increase counter only if products found
+            //         }
+            //     }
+            // }
             $page_data['category_type_products'] = $category_type_products;
             $page_data['category_type_names'] = array_keys($category_type_products);
 
             // Initialize an array for exclusive colors
             $color_names = ['Black', 'Pink', 'White', 'Green', 'Yellow', 'Orange', 'Red', 'Teal', 'Violet', 'Blue'];
-            $exclusive_colors = [];
-            foreach ($color_names as $color_name) {
-                // Fetch color data for each color name
-                $color_data = $this->color_product_array_data($color_name, 'ARRAY');
-                // Check if color data is not empty and add to exclusive_colors array
-                if (!empty($color_data[$color_name])) {
-                    $exclusive_colors[$color_name] = $color_data[$color_name];
-                }
-            }
+            // $exclusive_colors = [];
+            // foreach ($color_names as $color_name) {
+            //     // Fetch color data for each color name
+            //     $color_data = $this->color_product_array_data($color_name, 'ARRAY');
+            //     // Check if color data is not empty and add to exclusive_colors array
+            //     if (!empty($color_data[$color_name])) {
+            //         $exclusive_colors[$color_name] = $color_data[$color_name];
+            //     }
+            // }
 
-            $page_data['exclusive_colors'] = $exclusive_colors;
-            $page_data['exclusive_colors_name'] = array_keys($exclusive_colors); // Only keep names with products
+           // $page_data['exclusive_colors'] = $exclusive_colors;
+           // $page_data['exclusive_colors_name'] = array_keys($exclusive_colors); // Only keep names with products
 
             //spotlight products
             $limit      = $parameters['limit'] ?? 20;
@@ -542,7 +542,7 @@ class EcommerceApiController extends BaseController
                 ],
             ];
 
-            $page_data['spotlight_products'] = $this->spotlight_array_data($filter);
+            //$page_data['spotlight_products'] = $this->spotlight_array_data($filter);
 
             //fluencer products
             $limit      = $parameters['limit'] ?? 20;
@@ -556,7 +556,7 @@ class EcommerceApiController extends BaseController
                 ],
             ];
 
-            $page_data['fluencer_products'] = $this->fluencer_array_data($filter);
+            ///$page_data['fluencer_products'] = $this->fluencer_array_data($filter);
 
             return formatApiResponse($this->request, $this->response, ApiResponseStatusCode::OK, "Data Fetch Successfully", $page_data);
         } catch (Exception $e) {
