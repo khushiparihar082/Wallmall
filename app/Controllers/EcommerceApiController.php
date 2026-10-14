@@ -498,20 +498,20 @@ class EcommerceApiController extends BaseController
             $page_data['categor_type'] = $categor_type;
 
             $category_type_products = [];
-            // if (!empty($categor_type)) {
-            //     $count = 0; // counter
-            //     foreach ($categor_type as $row) {
-            //         if ($count >= 5) { // limit to 5 categories
-            //             break;
-            //         }
-            //         $category_type_name = $row['category_type_name'];
-            //         $category_data = $this->category_type_product_array_data($category_type_name, 'ARRAY');
-            //         if (!empty($category_data[$category_type_name])) {
-            //             $category_type_products[$category_type_name] = $category_data[$category_type_name];
-            //             $count++; // increase counter only if products found
-            //         }
-            //     }
-            // }
+            if (!empty($categor_type)) {
+                $count = 0; // counter
+                foreach ($categor_type as $row) {
+                    if ($count >= 5) { // limit to 5 categories
+                        break;
+                    }
+                    $category_type_name = $row['category_type_name'];
+                    $category_data = $this->category_type_product_array_data($category_type_name, 'ARRAY');
+                    if (!empty($category_data[$category_type_name])) {
+                        $category_type_products[$category_type_name] = $category_data[$category_type_name];
+                        $count++; // increase counter only if products found
+                    }
+                }
+            }
             $page_data['category_type_products'] = $category_type_products;
             $page_data['category_type_names'] = array_keys($category_type_products);
 

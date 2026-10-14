@@ -28,7 +28,7 @@
                             </div>
                             <div class="mb-3 col-md-4">
                                 <label for="variant_sku_code">SKU Code<span class="text-danger">*</span></label>
-                                <input type="number" placeholder="SKU Code" id="variant_sku_code" name="variant_sku_code" class="form-control" placeholder="HSN Code" value="<?= @$variant_sku_code ?>">
+                                <input type="text" placeholder="SKU Code" id="variant_sku_code" name="variant_sku_code" class="form-control" placeholder="HSN Code" value="<?= @$variant_sku_code ?>">
                                 <span class="error-message" id="error-variant_sku_code"></span>
                             </div>
                             <div class="mb-3 col-md-4">

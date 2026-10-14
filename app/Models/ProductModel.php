@@ -279,13 +279,13 @@ class ProductModel extends FunctionModel
 
                 foreach (range(1, 3) as $i) {
                     $this->select(getImagePathQueryString("product.product_image$i"));
-                    $this->select(getImagePathQueryString("product.product_image$i", true));
+                    // $this->select(getImagePathQueryString("product.product_image$i", true));
                     $this->select("product.product_alt_text$i");
                 }
 
                 // 👇 Spotlight & Fluencer fields add here
                 $this->select(getImagePathQueryString("product.spotlight_image"));
-                $this->select(getImagePathQueryString("product.spotlight_image", true));
+                // $this->select(getImagePathQueryString("product.spotlight_image", true));
                 $this->select("product.spotlight_alt_text");
                 $this->select("product.fluencer_video, product.fluencer_alt_text");
                 $this->select("product.is_spotlight, product.is_fluencer");
@@ -301,9 +301,9 @@ class ProductModel extends FunctionModel
                     if (isset($filter['category_type']['other_fields']) && $filter['category_type']['other_fields'] == true) {
                         $this->select('category_type.category_type_description,category_type.category_type_alt_text');
                         $this->select(getImagePathQueryString('category_type.category_type_image'));
-                        $this->select(getImagePathQueryString('category_type.category_type_image', true));
+                        //$this->select(getImagePathQueryString('category_type.category_type_image', true));
                         $this->select(getImagePathQueryString('category_type.category_type_icon'));
-                        $this->select(getImagePathQueryString('category_type.category_type_icon', true));
+                        //$this->select(getImagePathQueryString('category_type.category_type_icon', true));
                     }
                 }
                 if (in_array('category', $joins)) {
@@ -311,7 +311,7 @@ class ProductModel extends FunctionModel
                     if (isset($filter['category']['other_fields']) && $filter['category']['other_fields'] == true) {
                         $this->select('category.category_description,category.category_alt_text');
                         $this->select(getImagePathQueryString('category.category_image'));
-                        $this->select(getImagePathQueryString('category.category_image', true));
+                       // $this->select(getImagePathQueryString('category.category_image', true));
                     }
                 }
                 if (in_array('brand', $joins)) {
@@ -319,7 +319,7 @@ class ProductModel extends FunctionModel
                     if (isset($filter['brand']['other_fields']) && $filter['brand']['other_fields'] == true) {
                         $this->select('brand.brand_description,brand.brand_alt_text');
                         $this->select(getImagePathQueryString('brand.brand_image'));
-                        $this->select(getImagePathQueryString('brand.brand_image', true));
+                        //$this->select(getImagePathQueryString('brand.brand_image', true));
                     }
                 }
                 if (in_array('variant', $joins)) {
@@ -330,7 +330,7 @@ class ProductModel extends FunctionModel
                         $this->select('product_variant.variant_weight,product_variant.mrp,product_variant.discount_per,product_variant.gst_per,product_variant.selling_price,product_variant.delivery_charge,product_variant.variant_description');
                         foreach (range(1, 6) as $i) {
                             $this->select(getImagePathQueryString("product_variant.variant_image$i"));
-                            $this->select(getImagePathQueryString("product_variant.variant_image$i", true));
+                            //$this->select(getImagePathQueryString("product_variant.variant_image$i", true));
                             $this->select("product_variant.variant_alt_text$i");
                         }
                         if (isset($filter['ecommerce']) && $filter['ecommerce'] != true) {
@@ -368,14 +368,14 @@ class ProductModel extends FunctionModel
                     if (in_array('color', $joins)) {
                         $this->select('color.color_name,color.color_code,color_alt_text');
                         $this->select(getImagePathQueryString('color.color_image'));
-                        $this->select(getImagePathQueryString('color.color_image', true));
+                        //$this->select(getImagePathQueryString('color.color_image', true));
                     }
                     //OfferItem
                     if (in_array('offer', $joins)) {
                         $this->select('offer.offer_id,offer.offer_name,offer.offer_title,offer.offer_alt_text,offer.offer_type,offer.offer_from,offer.offer_to');
                         $this->select(getNumericQueryString('offer.offer_discount'));
                         $this->select(getImagePathQueryString('offer.offer_image'));
-                        $this->select(getImagePathQueryString('offer.offer_image', true));
+                        //$this->select(getImagePathQueryString('offer.offer_image', true));
                     }
                     if (in_array('customer_review', $joins)) {
                         $this->select('ROUND(IFNULL(review_summary.review_rating_avg, 0), 1) as customer_rating');

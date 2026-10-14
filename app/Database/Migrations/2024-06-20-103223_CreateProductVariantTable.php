@@ -115,6 +115,11 @@ class CreateProductVariantTable extends Migration
                 'constraint' => '10,2',
                 'default' => '0.00',
             ],
+             'discount_deal_amt' => [
+                'type' => 'DECIMAL',
+                'constraint' => '10,2',
+                'default' => '0.00',
+            ],
             'variant_description' => [
                 'type' => 'TEXT',
             ],
@@ -189,7 +194,7 @@ class CreateProductVariantTable extends Migration
         $this->forge->addForeignKey('product_id', 'product', 'product_id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('unit_id', 'unit', 'unit_id', 'RESTRICT', 'RESTRICT');
         $this->forge->addForeignKey('size_id', 'size', 'size_id', 'RESTRICT', 'RESTRICT');
-        $this->forge->addForeignKey('color_id', 'color', 'color_id', 'RESTRICT', 'RESTRICT');
+        //$this->forge->addForeignKey('color_id', 'color', 'color_id', 'RESTRICT', 'RESTRICT');
 
         $this->forge->createTable('product_variant', true);
 
