@@ -888,7 +888,7 @@ class EcommerceApiController extends BaseController
             $category_list = $this->getCategoryModel()
                 ->select('category.category_id,category.category_name,category.category_alt_text')
                 ->select(getImagePathQueryString('category_image'))
-                ->select(getImagePathQueryString('category_image', true))
+                //->select(getImagePathQueryString('category_image', true))
                 ->select('COUNT(product.product_id) AS product_count_category_wise')
                 ->join('product', 'product.category_id = category.category_id')
                 ->where('category.is_active', 1)
@@ -906,7 +906,7 @@ class EcommerceApiController extends BaseController
             $brand_list = $this->getBrandModel()
                 ->select('brand.brand_id,brand.brand_name,brand.brand_alt_text')
                 ->select(getImagePathQueryString('brand_image'))
-                ->select(getImagePathQueryString('brand_image', true))
+                //->select(getImagePathQueryString('brand_image', true))
                 ->select('COUNT(product.product_id) AS product_count_brand_wise')
                 ->join('product', 'product.brand_id = brand.brand_id')
                 ->where('brand.is_active', 1)
@@ -924,7 +924,7 @@ class EcommerceApiController extends BaseController
             $color_list = $this->getProductVariantModel()
                 ->select('color.color_id,color.color_name,color.color_alt_text,color_code')
                 ->select(getImagePathQueryString('color_image'))
-                ->select(getImagePathQueryString('color_image', true))
+                //->select(getImagePathQueryString('color_image', true))
                 ->select('COUNT(product_variant.variant_id) AS product_count_color_wise')
                 ->join('color', 'product_variant.color_id = color.color_id')
                 ->groupBy('color.color_name')
@@ -1008,7 +1008,7 @@ class EcommerceApiController extends BaseController
                 $data['filters']['category'] = $this->category_list_array_data();
                 $data['filters']['brand'] = $this->brand_list_array_data();
                 $data['filters']['feature_type'] = $this->feature_type_list_array_data();
-                $data['filters']['color'] = $this->color_list_array_data();
+                //$data['filters']['color'] = $this->color_list_array_data();
                 $data['filters']['size'] = $this->size_list_array_data();
                 $data['filters']['customer_review'] = $this->customer_review_list_array_data();
 
